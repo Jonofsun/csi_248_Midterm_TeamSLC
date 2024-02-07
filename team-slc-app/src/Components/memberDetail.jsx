@@ -1,5 +1,12 @@
-function memberDetail() {
-  return <></>;
+function MemberDetail({ member }) {
+  return (
+    <>
+      <div>
+        <h2>{member.name}</h2>
+        <p>{member.description}</p>
+      </div>
+    </>
+  );
 }
 
-export default memberDetail;
+export default MemberDetail;
