@@ -12,19 +12,26 @@ function Comments({ initialComments = [] }) {
 
   return (
     <>
-      <div>
-        <input
-          type="text"
-          placeholder="Write a review!" // possibly add fuctionality for {member.id}
-          value={newComment}
-          onChange={(e) => setNewComment(e.target.value)}
-        />
-        <button onClick={handleAddComment}>Add Comment</button>
-        <div>
-          {comments.map((comment, index) => (
-            <p key={index}>{comment}</p>
-          ))}
+      <div className="comments-container">
+        <div className="comments-header">Comments</div>
+        <div className="comment-input-container">
+          <input
+            type="text"
+            placeholder="Write a review!" // possibly add fuctionality for {member.id}
+            value={newComment}
+            onChange={(e) => setNewComment(e.target.value)}
+            className="comment-input"
+          />
+          <button onClick={handleAddComment} className="add-comment-btn">
+            Add Comment
+          </button>
         </div>
+        {comments.length > 0 &&
+          comments.map((comment, index) => (
+            <div key={index} className="comment">
+              <p>{comment}</p>
+            </div>
+          ))}
       </div>
     </>
   );
