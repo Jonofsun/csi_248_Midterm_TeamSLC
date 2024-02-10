@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { MembersContext } from "../App";
 function Create() {
-  const { createMember } = useContext(MembersContext);
+  const { createNewMember } = useContext(MembersContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     let formData = new FormData(e.target);
@@ -11,7 +11,7 @@ function Create() {
       role: "New Member",
       avatar: "",
     };
-    createMember(newMember);
+    createNewMember(newMember);
     e.target.reset();
   };
 
